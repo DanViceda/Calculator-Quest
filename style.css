@@ -183,7 +183,7 @@ body.darkMode {
 }
 
 .switch input:checked+.slider {
-  background-color: #b8d3ff; 
+  background-color: var(--button-text-light);
 }
 
 .switch input:checked+.slider:before {
