@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;1,300&display=swap');
+
+:root {
+  --background-light: #f1f0f6;
+  --text-light: rgba(137, 136, 142, 255);
+  --button-background-light: #f1f0f6;
+  --button-text-light: rgba(132, 131, 136, 255);
+  --box-shadow-light: 8px 8px 16px rgba(196, 196, 201, 0.8), -8px -8px 16px rgba(255, 255, 255, 0.8);
+  --background-dark: rgba(22, 24, 37, 255);
+  --text-dark: white;
+  --button-background-dark: rgba(22, 24, 37, 255);
+  --button-text-dark: white;
+  --box-shadow-dark: 15px 15px 30px rgba(10, 12, 24, 255), -15px -15px 30px rgba(23, 25, 38, 255);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: var(--background-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  border-radius: 20px;
+  background: var(--background-light);
+  box-shadow: var(--box-shadow-light);
+  max-width: 380px;
+  padding: 30px;
+  text-align: center;
+}
+
+.calcScreen {
+  background: var(--background-light);
+  color: var(--text-light);
+  padding: 20px;
+  border-radius: 20px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  box-shadow: inset 6px 6px 12px rgba(196, 196, 201, 0.6), inset -6px -6px 12px rgba(255, 255, 255, 0.6);
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.calcOperation {
+  text-align: right;
+  color: var(--text-light);
+  font-size: 24px;
+  padding-bottom: 10px;
+  border-bottom: none;
+}
+
+.calcTyped {
+  font-size: 36px;
+  text-align: right;
+  color: var(--text-light);
+}
+
+.calcButtons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.button {
+  background: var(--button-background-light);
+  color: var(--button-text-light);
+  padding: 20px;
+  font-size: 28px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: var(--box-shadow-light);
+  transition: all 0.2s ease;
+}
+
+.button.c {
+  color: rgba(81, 135, 167, 255);
+  background-color: rgba(243, 246, 247, 255);
+}
+
+.equalButton {
+  grid-column: span 2;
+  font-size: 36px;
+}
+
+.button:active {
+  transform: translateY(2px);
+  box-shadow: 2px 2px 4px rgba(196, 196, 201, 0.8), -2px -2px 4px rgba(255, 255, 255, 0.8);
+  background-color: rgba(220, 220, 220, 1);
+}
+
+body.darkMode {
+  background: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.container.darkMode {
+  background: var(--background-dark);
+  box-shadow: var(--box-shadow-dark);
+}
+
+.calcScreen.darkMode {
+  background: var(--background-dark);
+  color: var(--text-dark);
+  box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.2), inset -6px -6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button.darkMode {
+  background: var(--button-background-dark);
+  color: var(--button-text-dark);
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button.c.darkMode {
+  color: rgba(81, 135, 167, 255);
+  background-color: var(--button-background-dark);
+}
+
+.button.darkMode:active {
+  transform: translateY(2px);
+  box-shadow: 4px 4px 8px rgba(14, 16, 29, 0.4), -4px -4px 8px rgba(14, 16, 29, 0.8);
+  background-color: rgba(40, 42, 65, 1);
+}
+
+.modeToggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--button-background-light);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.modeLabel {
+  margin-left: 10px;
+}
+
+.switch input:checked+.slider {
+  background-color: #34495e;
+}
+
+.switch input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}

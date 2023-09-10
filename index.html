@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Calculator</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="modeToggle">
+      <label class="switch">
+        <input type="checkbox" id="modeToggle" onchange="toggleDarkMode()">
+        <span class="slider round"></span>
+      </label>
+      <span class="modeLabel">Toggle Theme</span>
+    </div>
+    <div class="calcScreen">
+      <div class="calcOperation"></div>
+      <div class="calcTyped"></div>
+    </div>
+    <div class="calcBody">
+      <div class="calcButtons">
+        <button class="button c" onclick="clearScreen()">C</button>
+        <button class="button c" onclick="deleteLastChar()">DEL</button>
+        <button class="button c" onclick="insert('%')">%</button>
+        <button class="button c" onclick="insert('/')">/</button>
+        <button class="button" onclick="insert('7')">7</button>
+        <button class="button" onclick="insert('8')">8</button>
+        <button class="button" onclick="insert('9')">9</button>
+        <button class="button c" onclick="insert('*')">*</button>
+        <button class="button" onclick="insert('4')">4</button>
+        <button class="button" onclick="insert('5')">5</button>
+        <button class="button" onclick="insert('6')">6</button>
+        <button class="button c" onclick="insert('-')">-</button>
+        <button class="button" onclick="insert('1')">1</button>
+        <button class="button" onclick="insert('2')">2</button>
+        <button class="button" onclick="insert('3')">3</button>
+        <button class="button c" onclick="insert('+')">+</button>
+        <button class="button" onclick="insert('0')">0</button>
+        <button class="button" onclick="insert('.')">.</button>
+        <button class="button c equalButton" onclick="calculate()">=</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
