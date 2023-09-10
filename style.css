@@ -153,7 +153,7 @@ body.darkMode {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--button-background-light);
+  background-color: #34495e;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -183,7 +183,7 @@ body.darkMode {
 }
 
 .switch input:checked+.slider {
-  background-color: #34495e;
+  background-color: #b8d3ff; 
 }
 
 .switch input:checked+.slider:before {
